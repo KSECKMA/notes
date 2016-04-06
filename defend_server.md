@@ -1,3 +1,4 @@
+---------------------------------------------------------------------------------------------------------------------------------
 Script sử dụng để ngăn ngừa các user không được phép sử dụng các command hay shell. Sử dụng trong phòng thủ server với ctf attack and defend.
 ```bash
 #!/bin/bash
@@ -16,4 +17,19 @@ do
         fi
     done
 done
+```
+---------------------------------------------------------------------------------------------------------------------------------
+Liệt kê các user đang đăng nhập:
+```bash
+> who -u
+mmrozek  tty1         Aug 17 10:03 09:01        9250
+mmrozek  pts/3       Aug 17 10:09 01:46       19467 (:pts/2:S.0)
+```
+Troll user:
+```bash
+echo "HAHAHAHAHAHAHAHA" | write mmrozek pts/3
+```
+Kickout user:
+```bash
+kill -9 19467
 ```
